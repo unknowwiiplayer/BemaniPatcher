@@ -86,6 +86,12 @@
                         ],
                     },
                     {
+                        name: "Disable V-Sync",
+                        patches: [
+                            {offset: 0x516739, off: [0x8B, 0x96, 0x80, 0x00, 0x00, 0x00], on: [0xBA, 0x00, 0x00, 0x00, 0x00, 0x90]},
+                        ],
+                    },
+                    {
                         name: "Patch Borderless Fullscreen Window Size to 2560x1440",
                         patches: [
                             {offset: 0x35F05B, off: [0x80, 0x07], on: [0x00, 0x0A]},
