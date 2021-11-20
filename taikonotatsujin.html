@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Taiko no Tatsujin (March 2020 Ver.)</title>
+        <title>Taiko no Tatsujin (March 2020 Ver.) Modder</title>
         <link rel="stylesheet" href="css/style.css">
         <!-- don't hate -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -11,7 +11,7 @@
         <script type="text/javascript">
             window.addEventListener("load", function () {
             new PatchContainer([
-                new Patcher("Taiko.exe", "12.00", [
+               new Patcher("Taiko.exe", "00.18", [
                     {
                         name: "Unlock Songs",
                         patches: [
@@ -19,7 +19,7 @@
                         ]
                     },
                     {
-                        name: "Shared audio mode",
+                        name: "Shared Audio Mode",
                         patches: [
                             {offset: 0x551577, off: [0x74], on: [0xEB]},
                         ],
@@ -27,7 +27,7 @@
                     {
                         name: "Disable V-Sync",
                         patches: [
-                            {offset: 0x3D5589, off: [0x8B, 0x96, 0x80, 0x00, 0x00, 0x00], on: [0xBA, 0x00, 0x00, 0x00, 0x00, 0x90]},
+                            {offset: 0x3D5589, off: [0x8B, 0x96, 0x80, 0x00, 0x00], on: [0xBA, 0x00, 0x00, 0x00, 0x00]},
                         ],
                     },
                     {
@@ -40,7 +40,7 @@
                         ],
                     },
                     {
-                        name: "Patch Borderless Fullscreen Window to 2560x1440",
+                        name: "Patch Borderless Fullscreen Window Size to 2560x1440",
                         patches: [
                             {offset: 0x223F2B, off: [0x80, 0x07], on: [0x00, 0x0A]},
                             {offset: 0x223F32, off: [0x38, 0x04], on: [0xA0, 0x05]},
@@ -66,12 +66,39 @@
                         ],
                     },
                 ]),
-              ]);
-          });
+                new Patcher("Taiko.exe", "08.18", [
+                    {
+                        name: "Skip Error 5-51",
+                        patches: [
+                            {offset: 0x22DC0, off: [0x48], on: [0xC3]}
+                        ]
+                    },
+                    {
+                        name: "Unlock Songs",
+                        patches: [
+                            {offset: 0x31428D, off: [0x32, 0xC0], on: [0xB0, 0x01]}
+                        ]
+                    },
+                    {
+                        name: "Shared Audio Mode",
+                        patches: [
+                            {offset: 0x692217, off: [0x74], on: [0xEB]},
+                        ],
+                    },
+                    {
+                        name: "Patch Borderless Fullscreen Window Size to 2560x1440",
+                        patches: [
+                            {offset: 0x35F05B, off: [0x80, 0x07], on: [0x00, 0x0A]},
+                            {offset: 0x35F062, off: [0x38, 0x04], on: [0xA0, 0x05]},
+                        ],
+                    },
+                ])
+            ]);
+            });
         </script>
     </head>
     <body>
-        <h1>Taiko no Tatsujin (March 2020 Ver.) EXE Patcher.</h1>
+        <h1>Taiko no Tatsujin (March 2020 Ver.) Modder</h1>
     </body>
 </html>
 
